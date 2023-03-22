@@ -1,244 +1,396 @@
 @import "../shared/helper";
 
 %legend {
-  height: px(40); display: flex; align-items: center;
-  justify-content: center; flex-wrap: wrap; padding-right: px(10);
-  > span {display: inline-block; width: px(16); height: px(10);
-    border-radius: px(2); margin: 0 px(10);}
+  height: px(5);
+  margin-bottom: px(5);
+  font-size: px(5);
+
+  >span {
+    display: inline-block;
+    width: px(6);
+    height: px(4);
+    border-radius: px(2);
+    margin: 0 px(3);
+  }
 }
 
-.home {flex: 1;display: flex;flex-direction: column;
-  background: #0f1527; color: white;
+.home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #010310;
+  color: white;
   font-size: px(16);
-  > header {
-    height: px(99);
-    background-size: cover;
-    width: px(2420);
-    margin: 0 auto;
-  }
-  > footer {
-    height: px(68);
+
+  header {
+    background: #0b1433;
     border: 1px solid #0d2d59;
-    margin: px(20) 0 1px;
-    border-radius: 4px;
-    background: #0c0d2b;
+    height: px(30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    font-size: px(12);
+    border-radius: px(4);
+    position: relative;
+    text-shadow: 0 0 10px #1d393d, 0 0 20px #1d393d, 0 0 30px #1d393d, 0 0 40px #1d393d;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, rgba(16, 48, 65, 1) 0%, rgba(0, 0, 0, 0) 25%, rgba(26, 58, 75, 1) 50%, rgba(0, 0, 0, 0) 75%, rgba(16, 48, 65, 1) 100%);
+    }
+
+    .left {
+      position: absolute;
+      left: 0;
+      font-size: px(9);
+      color: #e7e9f6;
+      padding: 0 px(13);
+    }
+
+    .right {
+      position: absolute;
+      right: 0;
+      font-size: px(6);
+      letter-spacing: 2px;
+      color: #e7e9f6;
+      padding: px(3) px(6);
+      margin-right: px(6);
+      border: 1px solid #0c183d;
+      box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
+      background: #0e1b48;
+    }
+
+    p {
+      letter-spacing: 3px;
+      font-weight: 900;
+    }
+  }
+
+  >footer {
+    height: px(20);
+    font-size: px(7);
+    letter-spacing: 3px;
+    border: 1px solid #0d2d59;
+    border-radius: px(4);
+    background: #0b1433;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
-  > main {
-    width: px(2420);
-    margin: 0 auto;
-    padding-top: px(30);
-    flex: 1;
+
+  main {
+    margin-top: px(10);
     display: grid;
     grid-template:
-      "box1 box2 box4 box5" 755fr
-      "box3 box3 box4 box5" 363fr / 366fr 361fr 811fr 747fr;
-    grid-column-gap: px(28);
-    grid-row-gap: px(28);
-    > section {text-align: center;}
+      "box1 box2 box3" / 727fr 811fr 747fr;
+    grid-column-gap: px(10);
+
+    .title {
+      border: 1px solid #103852;
+      color: #ddd;
+      background: #0f113a;
+      height: px(15);
+      font-size: px(7);
+      padding-left: px(6);
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    >section {
+      text-align: center;
+    }
+
     .bordered {
       border: 1px solid #0764bc;
       border-radius: 4px;
       position: relative;
       box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
       background: #0f113a;
+
       &::before {
         pointer-events: none;
-        content: '';position: absolute;left: 0;right: 0;bottom: 0;top: 0;
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
         border-radius: 4px;
         box-shadow: 17px 0 0 -16px #0e325f,
-        -17px 0 0 -16px #0e325f,
-        0 17px 0 -16px #0e325f,
-        0 -17px 0 -16px #0e325f,
-        9px 0 0 -8px #0d4483,
-        -9px 0 0 -8px #0d4483,
-        0 9px 0 -8px #0d4483,
-        0 -9px 0 -8px #0d4483,;
+          -17px 0 0 -16px #0e325f,
+          0 17px 0 -16px #0e325f,
+          0 -17px 0 -16px #0e325f,
+          9px 0 0 -8px #0d4483,
+          -9px 0 0 -8px #0d4483,
+          0 9px 0 -8px #0d4483,
+          0 -9px 0 -8px #0d4483;
       }
     }
-    > .section1 {
+
+
+
+    .section1 {
+      grid-area: box1;
+    }
+
+    .section2 {
+      grid-area: box2;
+      position: relative;
+
+      >.图表4 {
+        height: px(210);
+        display: flex;
+        flex-direction: column;
+        margin-top: px(10);
+
+        >.chart {
+          flex: 1;
+        }
+
+
+        >.notes {
+          font-size: px(6);
+          color: #eee;
+          text-align: end;
+        }
+
+      }
+
+      >.图表8 {
+        height: px(122);
+        display: flex;
+        flex-direction: column;
+        margin-top: px(10);
+
+        >.chart {
+          flex: 1;
+        }
+      }
+
+      >.formWrapper {
+        display: flex;
+        justify-content: space-around;
+
+        div {
+          width: px(60);
+          height: px(30);
+          border: 1px solid #0764bc;
+          background: #0c1139;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: px(5);
+          color: #aaa;
+          position: relative;
+
+          p {
+            margin-top: px(2);
+            font-size: px(8);
+            color: #eee;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 17px 0 0 -16px #0e325f,
+              -17px 0 0 -16px #0e325f,
+              0 17px 0 -16px #0e325f,
+              0 -17px 0 -16px #0e325f,
+              9px 0 0 -8px #0d4483,
+              -9px 0 0 -8px #0d4483,
+              0 9px 0 -8px #0d4483,
+              0 -9px 0 -8px #0d4483;
+          }
+        }
+      }
+
+      >span {
+        font-size: px(6);
+        position: absolute;
+        bottom: px(140);
+        left: px(10);
+        color: #eee;
+      }
+
+      >.ring {
+        border: 1px solid #0c2939;
+        position: absolute;
+        bottom: px(150);
+        left: px(14);
+        width: px(32);
+        height: px(32);
+        border-bottom: none;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: spin infinite 5s linear;
+
+        >.radar {
+          border: 2px solid #103142;
+          position: absolute;
+          width: px(27);
+          height: px(27);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: px(14);
+            height: px(14);
+            border: 2px solid #082132;
+            border-radius: 50%;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: px(1);
+            height: px(12);
+            z-index: 1;
+            background: #007cc0;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 1px #0094e4,
+              -3px -10px 5px 1px #0094e4,
+              -7px -15px 10px 1px #0094e4,
+              -3px -3px 10px 1px #0094e4,
+              -7px -7px 20px 1px #0094e4,
+              -11px -11px 30px 1px #0094e4,
+              -11px -11px 40px 1px #0094e4,
+              -11px -11px 30px 1px #0094e4,
+              -11px -11px 30px 1px #0094e4;
+          }
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    >.section1 {
       grid-area: box1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    > .section2 {
-      grid-area: box2;
+
+    .图表1,
+    .图表5,
+    .图表2,
+    .图表6{
+      height: px(120);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-    > .section3 {
-      grid-area: box3;
-    }
-    > .section4 {
-      grid-area: box4;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    > .section5 {
-      grid-area: box5;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      > .row1 {
-        height: px(317);
-      }
-      > .row2 {
-        height: px(317);
-      }
-      > .row3 {
-        height: px(455);
-      }
-    }
-    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯, .年龄段, .案发类型, .案发街道, .作案手段 {
-      height: px(315);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h2 {
-        flex-shrink: 0;
-        border: 1px solid #0a5299;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        font-size: px(22);
-        line-height: px(24);
-        padding: px(10) px(28);
-        text-shadow: 0 0 px(3) white;
-      }
-      .charts {
-        width: 100%;flex: 1;
-        display: flex;
-      }
-      .chart {
+
+      >.chart {
         flex: 1;
+      }
+    }
+
+    .图表7 {
+      height: px(170);
+      display: flex;
+      flex-direction: column;
+
+      >.chart {
+        flex: 1;
+      }
+    }
+
+
+    .图表3 {
+      height: px(200);
+      display: flex;
+      flex-direction: column;
+
+      >table {
         width: 100%;
-      }
-    }
-    .发案趋势, .案发时段 {
-      height: px(363);
-    }
-    .chart11, .chart12 {
-      flex: 1;display: flex; flex-direction: column;
-      > .chart {display: flex;
-        > .main {flex: 1}
-      }
-      .legend {@extend %legend;}
-    }
-    .年龄段 {display: flex;flex-direction: column;
-      height: px(363);
-      > .charts {
-        padding: px(30);
-      }
-      &-图1, &-图2, &-图3 {
-        flex: 1;display: flex; flex-direction: column;
-      }
-      &-图1, &-图2 {
-        .legend { @extend %legend;
-          .male {background: #33a4fa;}
-          .female {background: #8d70f8;}
-        }
-        .chart {
-          position: relative;
-          display: flex;
-          > .main {flex: 1;}
-          > .text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            color: #33a4fa; font-size: px(40); text-shadow: 0 0 px(20) #33a4fa;font-weight: bold;}
-        }
-      }
-      &-图2 {
-        width: px(290); flex-shrink: 0;
-        .legend {
-          justify-content: flex-start;
-        }
-      }
-      &-图3 {
-        border: 1px solid #08397d;
-        h3 {font-size: px(20); color: #7ab6db; margin-top: px(6);}
-      }
-    }
-    .籍贯 {
-      height: px(753); background: transparent;
-      > .wrapper {
-        position: relative;width: 100%;flex: 1;
-        display: flex; flex-direction: column;
-        .chart {flex: 1;}
-        .legend {
-          position: absolute;top: px(40);left: px(20);display: flex;
-          align-items: center;
-          font-size: px(22); padding: px(20) px(10) px(20) 0;
-          border-radius: 0;
-          .icon {
-            margin: 0 px(10);
-            display: inline-block;
-            width: px(16);
-            height: px(16);
-            border-radius: 50%;
-            background: #1cecd9;
-          }
-        }
-        .notes {
-          position: absolute;
-          bottom: px(10);
-          right: px(10);
-        }
-      }
-    }
-    .战果, .作案手段 {
-      padding: 0 px(24);
-      > table {
-        width: 100%; table-layout: fixed;
-        margin-top: px(25);
+        table-layout: fixed;
+        margin: px(2) 0;
         border-collapse: collapse;
-        th, td {
-          border: 1px solid #1a3671;
+
+        th,
+        td {
+          border: 1px solid #161d3a;
         }
+
         thead {
           th {
-            height: px(70);
-            box-shadow: inset 0 0 px(60) 0 #1f3d85;
+            height: px(18);
+            font-size: px(8);
+            color: #29436c;
+            box-shadow: inset 0 0 px(60) 0 #080d24;
           }
         }
+
         tbody {
-          td {height: px(50); width: px(84);
-            background: #1c2456;
+          td {
+            height: px(20);
+            width: px(10);
+            font-size: px(6);
+            background: #0c132e;
           }
 
         }
       }
-    }
-    .作案手段 {
-      > table {
-        tbody {
-          td {
-            height: px(26);
-          }
-        }
+
+      >.chart {
+        flex: 1;
       }
     }
-    .破获排名 {
-      height: px(423);
+
+    .图表5 {
       .legend {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        padding: 0 px(20) px(10);
-        > .first, > .second {
-          display: inline-block;
-          width: px(18); height: px(12);
-          background: red; margin: 0 px(10);
-        }
-        .first {
-          background: linear-gradient(90deg, #2034f9 0%, #04a1ff 100%);
-        }
-        .second {
-          background: linear-gradient(90deg, #b92ae8 0%, #6773e7 100%);
-        }
+        @extend %legend;
       }
+
+      >.text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        color: #33a4fa;
+        font-size: px(12);
+        text-shadow: 0 0 px(20) #33a4fa;
+        font-weight: bold;
+      }
+    }
+
+    .section3 {
+      grid-area: box3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }
