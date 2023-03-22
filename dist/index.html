@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>来宾市农产品数据可视化平台</title>
+  <script>
+    const {clientWidth} = document.documentElement
+    const {clientHeight} = document.documentElement
+    window.pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth
+    const pageHeight = pageWidth / (16 / 9)
+    document.write(`
+      <style>
+        html{
+          font-size: ${pageWidth / 100}px;
+        }
+      </style>
+    `)
+  </script>
+<script type="module" crossorigin src="https://starry29.github.io/big-screen/assets/index.12e4bf2c.js"></script>
+  <link rel="modulepreload" href="https://starry29.github.io/big-screen/assets/vendor.ff48b9fd.js">
+  <link rel="stylesheet" href="https://starry29.github.io/big-screen/assets/index.7ba945a2.css">
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const root = document.querySelector('#root')
+  root.style.width = pageWidth + 'px'
+  root.style.height = pageHeight + 'px'
+  root.style.marginTop = (clientHeight - pageHeight) / 2 + 'px'
+</script>
+
+</body>
+</html>
